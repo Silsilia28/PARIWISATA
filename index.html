@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Bali - Paradise Island</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <h1 class="logo">BaliWonder</h1>
+        <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#destinasi">Destinasi</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+</header>
+<section id="home" class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h2>Explore Bali</h2>
+        <h3>Pulau Surga Dengan Sejuta Keindahan</h3>
+        <p>Temukan pengalaman yang penuh petualangan, ketenangan, dan pesona budaya yang memikat.</p>
+        <a href="#destinasi" class="btn-hero">Jelajahi Sekarang</a>
+    </div>
+</section>
+<section id="about" class="about">
+    <div class="about-container">
+        <img src="https://ih1.redbubble.net/image.3834628411.5562/pp,504x498-pad,600x600,f8f8f8.jpg" alt="Sawah Terasering Ubud">
+        <div class="about-text">
+            <h2>Selamat Datang di Pulau Dewata</h2>
+            <p>Bali bukan sekadar destinasi — Bali adalah pengalaman jiwa. Angin, ombak, dan senyum warganya menghadirkan ketenangan yang meresap. Di sini kita tidak hanya melihat keindahan, tapi juga merasakannya, belajar untuk berhenti sejenak, bernapas, dan hidup lebih pelan namun bermakna.</p>
+        </div>
+    </div>
+</section>
+<section id="destinasi" class="destinasi">
+    <h2>Destinasi Populer</h2>
+    <div class="cards">
+        <div class="card" onclick="showInfo('kuta')">
+            <img src="https://www.urlaubstracker.de/wp-content/uploads/2018/07/bali-strand.jpg" alt="Pantai Kuta">
+            <h3>Pantai Kuta</h3>
+            <p>Surga sunset & surfing.</p>
+        </div>
+        <div class="card" onclick="showInfo('ubud')">
+            <img src="https://www.tripsavvy.com/thmb/3Hq5DJuiDdgvEALr4EDy33bT2k4=/2308x1298/filters:no_upscale():max_bytes(150000):strip_icc()/water-temple-in-central-ubud-bali---indonesia-654314586-5c2aa593c9e77c00011d4aba.jpg" alt="Ubud">
+            <h3>Ubud</h3>
+            <p>Pusat budaya dengan alam yang tenang.</p>
+        </div>
+        <div class="card" onclick="showInfo('nusa')">
+            <img src="https://girleatworld.net/wp-content/uploads/2018/04/nusa-penida-kelingking-1.jpg" alt="Nusa Penida">
+            <h3>Nusa Penida</h3>
+            <p>Pulau eksotis dengan laut biru jernih.</p>
+        </div>
+        <div class="card" onclick="showInfo('tanahlot')">
+            <img src="https://www.theungasan.com/wp-content/uploads/2020/01/Tanah-Lot-Temple.jpg" alt="Tanah Lot">
+            <h3>Tanah Lot</h3>
+            <p>Pura ikonik di atas laut.</p>
+        </div>
+        <div class="card" onclick="showInfo('uluwatu')">
+            <img src="https://theworldtravelguy.com/wp-content/uploads/2021/02/DJI_0377_1300.jpg" alt="Uluwatu">
+            <h3>Uluwatu</h3>
+            <p>Pura tebing & pertunjukan Kecak.</p>
+        </div>
+        <div class="card" onclick="showInfo('bedugul')">
+            <img src="https://www.rentalmobilbali.net/wp-content/uploads/2017/08/8-Tempat-Rekreasi-Di-Bedugul-Feature-Image.jpg" alt="Bedugul">
+            <h3>Bedugul</h3>
+            <p>Danau dan pura dalam suasana pegunungan.</p>
+        </div>
+        <div class="card" onclick="showInfo('lovina')">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.ojFNjTyUqpKJtjoVmrUQKgHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Lovina">
+            <h3>Lovina</h3>
+            <p>Pantai sunrise & lumba-lumba.</p>
+        </div>
+        <div class="card" onclick="showInfo('jimbaran')">
+            <img src="https://a.cdn-hotels.com/gdcs/production86/d1396/24c2f7a5-ff3f-496f-b9fa-77bab2619024.jpg" alt="Jimbaran">
+            <h3>Jimbaran</h3>
+            <p>Pantai seafood romantis.</p>
+        </div>
+        <div class="card" onclick="showInfo('munduk')">
+            <img src="https://nusapenida-balitour.com/wp-content/uploads/2020/03/munduk-waterfall-bali-tour-1024x683.jpg" alt="Air Terjun Munduk">
+            <h3>Air Terjun Munduk</h3>
+            <p>Air terjun indah di tengah alam tropis.</p>
+        </div>
+    </div>
+</section>
+<footer id="kontak">
+    <p>🌴 BaliWonder | Email: explorebali@gmail.com | © 2025 All Rights Reserved</p>
+</footer>
+<div id="infoModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeInfo()">&times;</span>
+    <img id="modalImg" src="" alt="">
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+  </div>
+</div>
+<script>
+function showInfo(place){
+    const title = document.getElementById("modalTitle");
+    const text = document.getElementById("modalText");
+    const img = document.getElementById("modalImg");
+
+    if(place === "kuta"){title.innerText="Pantai Kuta";text.innerText="Pantai Kuta terkenal dengan pasir putih dan ombak yang cocok untuk berselancar. Pantai ini juga menjadi tempat favorit menikmati matahari terbenam yang indah dan suasana yang hidup.";img.src="https://i.ibb.co/02H9Z1t/bali1.jpg";}
+    if(place === "ubud"){title.innerText="Ubud";text.innerText="Ubud adalah pusat seni dan budaya di Bali, dikelilingi sawah hijau, galeri seni, serta suasana yang tenang dan menenangkan.";img.src="https://i.ibb.co/k8ZjBD3/bali2.jpg";}
+    if(place === "nusa"){title.innerText="Nusa Penida";text.innerText="Nusa Penida terkenal dengan tebing dramatis, air laut jernih, dan pemandangan alam yang sangat memukau.";img.src="https://i.ibb.co/ZJX6ZKg/bali3.jpg";}
+    if(place === "tanahlot"){title.innerText="Tanah Lot";text.innerText="Tanah Lot adalah pura yang berdiri di atas batu karang di tepi laut dan terkenal sebagai tempat terbaik menikmati matahari terbenam.";img.src="https://i.ibb.co/7GJ3sKh/tanahlot.jpg";}
+    if(place === "uluwatu"){title.innerText="Uluwatu";text.innerText="Uluwatu dikenal dengan pura yang berada di tebing tinggi menghadap laut serta pertunjukan Tari Kecak saat matahari terbenam.";img.src="https://i.ibb.co/5M3SyMh/uluwatu.jpg";}
+    if(place === "bedugul"){title.innerText="Bedugul";text.innerText="Bedugul memiliki suasana pegunungan yang sejuk dengan Danau Beratan dan Pura Ulun Danu yang menjadi ikon keindahannya.";img.src="https://i.ibb.co/7KxnWqR/bedugul.jpg";}
+    if(place === "lovina"){title.innerText="Lovina";text.innerText="Pantai Lovina terkenal dengan atraksi lumba-lumba di pagi hari, suasana tenang, dan pantai berpasir hitam yang khas.";img.src="https://i.ibb.co/Jq8BK5f/lovina.jpg";}
+    if(place === "jimbaran"){title.innerText="Jimbaran";text.innerText="Jimbaran adalah tempat yang terkenal dengan suasana pantai tenang dan restoran seafood, ideal menikmati makan malam sambil menyaksikan matahari terbenam.";img.src="https://i.ibb.co/1X2xW8g/jimbaran.jpg";}
+    if(place === "munduk"){title.innerText="Air Terjun Munduk";text.innerText="Air Terjun Munduk menawarkan suasana hijau yang sejuk dengan air terjun yang jatuh di tengah hutan, cocok untuk bersantai dan menikmati ketenangan alam.";img.src="https://i.ibb.co/hMKSkvz/munduk.jpg";}
+
+    document.getElementById("infoModal").style.display = "flex";
+}
+function closeInfo(){document.getElementById("infoModal").style.display="none";}
+</script>
+</body>
+</html>
